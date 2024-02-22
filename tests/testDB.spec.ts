@@ -11,21 +11,21 @@ test.describe.only("Testing db", () => {
       password: "a15e5a47817c45a99ca9f32298e1cca90ea3c056",
       database: "automation_heraction",
       port: 3306,
-    });
-  });
+    })
+  })
 
   test("Create user", async () => {
     const userData = {
       username: "Lera",
       email: "test1234567@gmail.com",
       password: "123456",
-    };
+    }
 
     try {
       await pool.query(
         "INSERT INTO userslitvinenko (username, email, password) VALUES (?, ?, ?)",
         [userData.username, userData.email, userData.password]
-      );
+      )
       console.log("Successfully added user")
     } catch (error) {
       console.error("Error during creating user:", error.message)
@@ -46,19 +46,19 @@ test.describe.only("Testing db", () => {
       await pool.query(
         "UPDATE userslitvinenko SET email = ? WHERE username = ?",
         ["updated_email@gmail.com", "Lera"]
-      );
+      )
       console.log("Successfully updated user")
     } catch (error) {
       console.error("Error during updating user:", error.message)
     }
-  });
+  })
 
   test("Delete user", async () => {
     const userData = {
       username: "Lera",
       email: "test1234567@gmail.com",
       password: "123456",
-    };
+    }
 
     try {
       await pool.query("DELETE FROM userslitvinenko WHERE username = ?", [userData.username])
@@ -66,7 +66,7 @@ test.describe.only("Testing db", () => {
     } catch (error) {
       console.error("Error during deleting user:", error.message)
     }
-  });
+  })
 
   test("Check user count", async () => {
     try {
