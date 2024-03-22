@@ -21,3 +21,7 @@ function merge(num1, m, num2, n) {
 merge(num1, m, num2, n)
 console.log(num1)
 
+
+
+
+

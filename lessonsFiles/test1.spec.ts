@@ -1,7 +1,7 @@
 import {test, expect, chromium } from '@playwright/test';
 //const {firefox} = require('playwright');
 
-test('Site Makeup. Product type searching', async () => {
+test('Site Makeup1', async () => {
     const browser = await chromium.launch();
     const page = await browser.newPage();
     await page.goto('https://makeup.com.ua/ua/');
@@ -45,7 +45,7 @@ test('Leetcode account creating', async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage();
   await page.goto('https://leetcode.com/');
-  await page.click('text=Create Account');
+  await page.click('text=Sign in');
   await page.locator('form').click();
   await page.getByPlaceholder('Username').click();
   await page.getByPlaceholder('Username').fill('testuser34');
@@ -92,3 +92,15 @@ test('Site Hillel. Subscribe to newsletters', async () => {
   await page.close()
   await browser.close()
 });
+
+
+
+test('Playwright', async () => {
+  const browser = await chromium.launch();
+  let page = await browser.newPage();
+  await page.goto("https://playwright.dev/docs/intro");
+  await page.pause()
+  let search = page.locator('//button[@class="DocSearch DocSearch-Button"]');
+  await search.click()
+  await page.locator('//input[@class="DocSearch-Input"]').fill("test word test word");
+})

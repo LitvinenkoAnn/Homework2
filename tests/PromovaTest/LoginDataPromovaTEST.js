@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert";
-import LoginPage from "./testHomeWork9.js";
+import LoginPage from "./LoginPage.js";
 import { chromium } from "playwright";
 
 let negativeLoginData = [
